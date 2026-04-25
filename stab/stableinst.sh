@@ -22,7 +22,10 @@ echo -e "\e[31m|===========|"
 echo -e "Последние настройки"
 echo -e "Сначала по инструкции ниже, а потом замена основных конфигов\n"
 echo -e "No. Потом нажми Ctrl + D\e[0m"
+
+rm -rf .p10k.zsh
 wget https://raw.githubusercontent.com/vaster0012/first-config-zsh/main/stab/.p10k.zsh
+rm -rf .zshrc
 wget https://raw.githubusercontent.com/vaster0012/first-config-zsh/main/stab/.zshrc
 
 sudo chsh -s $(which zsh)
