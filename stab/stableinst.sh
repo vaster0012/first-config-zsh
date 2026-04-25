@@ -18,8 +18,12 @@ echo -e "\e[31m|Ставим плагины\e[0m"
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
-cp -fr .zshrc ~/
-cp -fr .p10k.zsh ~/
+echo -e "\e[31m|===========|"
+echo -e "Последние настройки"
+echo -e "Сначала по инструкции ниже, а потом замена основных конфигов\n"
+echo -e "No. Потом нажми Ctrl + D\e[0m"
+wget https://raw.githubusercontent.com/vaster0012/first-config-zsh/main/stab/.p10k.zsh
+wget https://raw.githubusercontent.com/vaster0012/first-config-zsh/main/stab/.zshrc
 
 sudo chsh -s $(which zsh)
 
