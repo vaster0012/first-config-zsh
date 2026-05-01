@@ -4,7 +4,7 @@ echo -e "\e[31m|===========|"
 echo -e "Старт установки пакета\e[0m"
 
 sudo apt update
-sudo apt install tree zsh git curl fzf wget -yq
+sudo apt install -yq tree zsh git curl fzf wget 
 
 echo -e "\e[31m|===========|"
 echo -e "Установка Oh My Zsh"
@@ -61,7 +61,7 @@ DEBIAN_FRONTEND=noninteractive apt install -y -q \
 
 echo -e "\e[31m|======Последние приголовления=====|\e[0m"
 echo -e "\e[31m|=======Установка доп. утилит======|\e[0m"
-sudo apt update -yq
-sudo apt install bat unzip net-tool iftop tmux -yq
+sudo apt update
+sudo apt install -yq bat unzip net-tools iftop tmux 
 
 exec sudo -u zsh 
