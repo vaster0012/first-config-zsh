@@ -4,7 +4,7 @@ echo -e "\e[31m|===========|"
 echo -e "Старт установки пакета\e[0m"
 
 sudo apt update
-sudo apt install tree zsh git curl fzf -y
+sudo apt install tree zsh git curl fzf wget -y
 
 echo -e "\e[31m|===========|"
 echo -e "Установка Oh My Zsh"
@@ -23,10 +23,22 @@ echo -e "Последние настройки"
 echo -e "Сначала по инструкции ниже, а потом замена основных конфигов\n"
 echo -e "No. Потом нажми Ctrl + D\e[0m"
 
-rm -rf .p10k.zsh
-wget https://raw.githubusercontent.com/vaster0012/first-config-zsh/main/stab/.p10k.zsh
-rm -rf .zshrc
-wget https://raw.githubusercontent.com/vaster0012/first-config-zsh/main/stab/.zshrc
+# Если файлы уже существуют (\-f), удаляем их и ставим новые
+if [ -f ~/.p10k.zsh ]; then
+    echo -e "\e[31m|===========|"
+    echo -e "Файл .p10k.zsh существует. Ставлю замену.\e[0m"
+    rm -rf ~/.p10k.zsh
+fi
+    wget https://raw.githubusercontent.com/vaster0012/first-config-zsh/main/stab/.p10k.zsh
+
+# Если файлы уже существуют (\-f), удаляем их и ставим новые
+if [ -f ~/.zshrc ]; then
+    echo -e "\e[31m|===========|"
+    echo -e "Файл .zshrc существует. Ставлю замену.\e[0m"
+    rm -rf ~/.zshrc
+fi
+    wget https://raw.githubusercontent.com/vaster0012/first-config-zsh/main/stab/.zshrc
+
 
 sudo chsh -s $(which zsh)
 
