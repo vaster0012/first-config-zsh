@@ -60,4 +60,9 @@ echo -e "===========|\e[0m"
 DEBIAN_FRONTEND=noninteractive apt install -y -q \
   -o Dpkg::Options::="--force-confold" traceroute
 
-exec sudo -u zsh
+echo -e "\e[31m|======Последние приголовления=====|\e[0m"
+echo -e "\e[31m|=======Установка доп. утилит======|\e[0m"
+sudo apt update -yq
+sudo apt install bat unzip net-tool iftop tmux -yq
+
+exec sudo -u zsh 
